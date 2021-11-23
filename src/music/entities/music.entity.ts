@@ -11,6 +11,6 @@ export class Music {
     @Column({ type: "varchar", length: "300" })
     name: string;
 
-    @ManyToMany(() => Album, (album) => album.music, { cascade: true })
+    @ManyToMany(() => Album, album => album.music, { cascade: ['remove'] })
     album: Album[];
 }

@@ -18,12 +18,10 @@ export class Album {
   @Column({type: "varchar", length: "4"})
   lancamento: string;
   
-  @ManyToMany(() => Music, (music) => music.album, { eager: true})
+  @ManyToMany(type => Music, music => music.album, { cascade: ['insert'], eager: true })
   @JoinTable({
     name: 'music_album_music',
     joinColumn: { name: 'album_id' },
-    inverseJoinColumn: { name: 'music_id' },
-    
-  })
-  music: Music[];
+    inverseJoinColumn: { name: 'music_id' }})
+    music: Music[];
 }

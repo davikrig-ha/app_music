@@ -31,4 +31,6 @@ update(@Param('id') id: string, @Body() updateAlbumDto: UpdateAlbumDto) {
 remove(@Param('id') id: string) {
   return this.albumService.remove(id);
 }
+
+
 }
