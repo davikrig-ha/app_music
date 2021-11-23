@@ -18,7 +18,7 @@ export class AlbumController {
   }
 
   @Put()
-  create(@Param('id') id: string, @Body() createAlbum: CreateAlbumDto)  {
+  create( @Body() createAlbum: CreateAlbumDto)  {
   return this.albumService.create(createAlbum);
 }
 

@@ -18,7 +18,7 @@ export class Album {
   @Column({type: "varchar", length: "4"})
   lancamento: string;
   
-  @ManyToMany(type => Music, music => music.album, { cascade: ['insert'], eager: true })
+  @ManyToMany(type => Music, music => music.album, { cascade: ['insert', 'soft-remove'], eager: true })
   @JoinTable({
     name: 'music_album_music',
     joinColumn: { name: 'album_id' },
