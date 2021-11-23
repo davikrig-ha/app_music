@@ -13,9 +13,9 @@ export class AlbumPorvider {
 
     }
 
-    getConfig(property: string): Promise<any> {
+    getAlbumList(): Promise<any> {
         return new Promise((resolve, reject) => {
-            this.apiGateway.get('album' + property).subscribe((response: HttpResponse<any>) => {
+            this.apiGateway.get('album').subscribe((response: HttpResponse<any>) => {
                 resolve(response.body);
                 // this.snackBar.successMessage(response.body.message);
             }, reject);
