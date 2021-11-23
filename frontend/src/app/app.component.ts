@@ -23,12 +23,5 @@ export class AppComponent {
     } catch (error) {
       console.error(error)
     }
-
-
-    this.albumPorvider.getAlbumList().then(res => {
-      console.log(res)
-    }, err => {
-      console.log(err);
-    })
   }
 }
