@@ -4,6 +4,10 @@ import { AlbumModule } from './album/album.module';
 import { AlbumController } from './album/album.controller';
 import { AlbumService } from './album/album.service';
 import { Album } from './album/entities/album.entity';
+import { MusicModule } from './music/music.module';
+import { MusicController } from './music/music.controller';
+import { MusicService } from './music/music.service';
+import { Music } from './music/entities/music.entity';
 
 
 
@@ -16,14 +20,15 @@ import { Album } from './album/entities/album.entity';
       username: 'root', 
       password: '170601',
       database: 'app_music',
-      entities: [Album],
+      entities: [Album, Music],
       synchronize: true,
       autoLoadEntities: true,
     }),
-    AlbumModule
+    AlbumModule,
+    MusicModule
 
   ],
-  controllers: [AlbumController],
-  providers: [AlbumService],
+  controllers: [AlbumController, MusicController],
+  providers: [AlbumService, MusicService],
 })
 export class AppModule {}

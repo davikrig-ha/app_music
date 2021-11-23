@@ -1,16 +1,20 @@
-import { Injectable, NotFoundException } from '@nestjs/common';
+import { Injectable, NotFoundException, Post } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 import { CreateAlbumDto } from './dto/create-album.dto';
 import { UpdateAlbumDto } from './dto/update-album.dto';
 import { Album } from './entities/album.entity';
 
+
+
 @Injectable()
 export class AlbumService {
+ 
   constructor(
     @InjectRepository(Album)
     private albumRepository: Repository<Album>,
   ) {}
+
 
  
   create(createAlbumDto: CreateAlbumDto): Promise<Album> {
@@ -42,4 +46,6 @@ export class AlbumService {
    const album = await this.findOne(id);
    return this.albumRepository.remove(album);
   }
+
+
 }

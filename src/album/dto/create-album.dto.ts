@@ -1,4 +1,5 @@
 import { IsNotEmpty } from 'class-validator';
+import { Music } from 'src/music/entities/music.entity';
 
 export class CreateAlbumDto {
     
@@ -9,5 +10,5 @@ export class CreateAlbumDto {
     @IsNotEmpty()
     lancamento: string;
     @IsNotEmpty()
-    music: string;
+    music: Music[];
 }

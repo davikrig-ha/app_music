@@ -1,11 +1,12 @@
-import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm';
+import { Music } from 'src/music/entities/music.entity';
+import { Entity, Column, PrimaryGeneratedColumn, JoinTable, ManyToMany } from 'typeorm';
+
 
 
 @Entity()
 export class Album {
-    
-    
-  @PrimaryGeneratedColumn()
+  
+ @PrimaryGeneratedColumn()
   id: string;
 
   @Column({ type: "varchar", length: "300" })
@@ -17,7 +18,12 @@ export class Album {
   @Column({type: "varchar", length: "4"})
   lancamento: string;
   
- @Column({ type: "varchar", length: "5000"})
- musics: string;
-
+  @ManyToMany(() => Music, (music) => music.album, { eager: true})
+  @JoinTable({
+    name: 'music_album_music',
+    joinColumn: { name: 'album_id' },
+    inverseJoinColumn: { name: 'music_id' },
+    
+  })
+  music: Music[];
 }
