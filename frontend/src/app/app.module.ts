@@ -8,6 +8,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { DashboardComponent } from './modules/dashboard/dashboard.component';
+import {MatToolbarModule} from '@angular/material/toolbar';
 
 
 @NgModule({
@@ -21,6 +22,7 @@ import { DashboardComponent } from './modules/dashboard/dashboard.component';
     HttpClientModule,
     MatIconModule,
     FlexLayoutModule,
+    MatToolbarModule
     
   ],
   providers: [ApiGateway, AlbumPorvider],
