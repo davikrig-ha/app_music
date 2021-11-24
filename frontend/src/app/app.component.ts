@@ -10,18 +10,10 @@ export class AppComponent {
   title = 'frontend';
 
   constructor(
-    private albumPorvider: AlbumPorvider
+    
   ) {
 
   }
 
-  async request() {
-    
-    try {
-      const album = await this.albumPorvider.getAlbumList();
-      console.log(album)
-    } catch (error) {
-      console.error(error)
-    }
-  }
+  
 }

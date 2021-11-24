@@ -33,6 +33,15 @@ export class AlbumPorvider {
         });
     }
 
+    findAlbum(query: any): Promise<any> {
+        return new Promise((resolve, reject) => {
+            this.apiGateway.get( `album/find?${query}`).subscribe((response: HttpResponse<any>) => {
+                resolve(response.body);
+                // this.snackBar.successMessage(response.body.message);
+            }, reject);
+        });
+    }
+
     validateRegister(albumDetail: any): Promise<any> {
         return new Promise((resolve, reject) => {
             this.apiGateway.post('album', albumDetail).subscribe((response: HttpResponse<any>) => {

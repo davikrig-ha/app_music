@@ -1,6 +1,6 @@
 import { Injectable, NotFoundException, Post } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
-import { Repository } from 'typeorm';
+import { Like, Repository } from 'typeorm';
 import { CreateAlbumDto } from './dto/create-album.dto';
 import { UpdateAlbumDto } from './dto/update-album.dto';
 import { Album } from './entities/album.entity';
@@ -31,6 +31,12 @@ export class AlbumService {
       throw new NotFoundException(`album ${id} not found`);
     }
     return this.albumRepository.save(album);
+  }
+
+  findByName(queryName): Promise<Album[]> {
+    return this.albumRepository.find({
+      where :{name: Like(`${queryName}%`)}
+    });
   }
 
 
