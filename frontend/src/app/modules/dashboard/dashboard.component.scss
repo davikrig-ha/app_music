@@ -1,9 +1,15 @@
 #dashboard {
     .search{ 
-        background-color: #cf832c;
+        color: #fff;
+       background-color: #cf832c;
         width: 100%;
         max-width: 100px;
         height: 50px;
+        
+    }
+
+    .mat-form-field-appearance-outline .mat-form-field-outline-thick {
+        color: #cf832c!important;
     }
 
     .search:hover {
@@ -21,5 +27,29 @@
           margin-top: 50px;
           
       }
-      
+
+      .toolbar {
+          color: #cf832c;
+      }
+
+      mat-label {
+          color: #fff;
+         
+      }
+
+      ::ng-deep .mat-form-field-appearance-outline .mat-form-field-outline {
+          color: #fff;
+          margin-top: 3px;
+          margin-bottom: -3px;
+      }
+
+      .cdk-text-field-autofill-monitored:not(:-webkit-autofill) {
+          color: #fff;
+      }
+
+      mat-icon {
+          color: white;
+      }
+
+   
 }

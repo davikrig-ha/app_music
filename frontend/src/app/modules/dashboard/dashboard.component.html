@@ -1,11 +1,11 @@
 <div id="dashboard">
 
   <div>
-      <mat-toolbar color="primary">
+      <mat-toolbar class="toolbar">
         <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
           <mat-icon>menu</mat-icon>
         </button>
-        <span>My Musics</span>
+        <span>My Albuns</span>
         <span class="example-spacer"></span>
         <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
           <mat-icon>queue_music</mat-icon>
@@ -15,7 +15,7 @@
 
   <div class="example">
     <mat-form-field appearance="outline">
-        <mat-label>Music Name</mat-label>
+        <mat-label>Album Name</mat-label>
         <input matInput type="text" [(ngModel)]="name">
         <button *ngIf="name" matSuffix mat-icon-button (click)="name=''">
           <mat-icon>close</mat-icon>
