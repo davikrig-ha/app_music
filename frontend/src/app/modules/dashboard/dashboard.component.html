@@ -34,7 +34,19 @@
       </mat-form-field>
       
       <button class="search" mat-button (click)="search()">search</button>
+
+    
+        <mat-list>
+       
+          <mat-list-item *ngFor="let album of albuns">
+            
+            {{album}} 
+            
+          </mat-list-item>
+        </mat-list>
+
   </div>
+
 
   
     

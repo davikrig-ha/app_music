@@ -1,3 +1,4 @@
+import { query } from '@angular/animations';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AlbumPorvider } from 'src/providers/album.provider';
@@ -12,6 +13,8 @@ export class DashboardComponent implements OnInit {
 
   name = '';
   author = '';
+  albuns = [];
+ 
 
   constructor(
     private router: Router,
@@ -20,7 +23,7 @@ export class DashboardComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-        // this.getAlbum();
+    
       }
       
   search(){

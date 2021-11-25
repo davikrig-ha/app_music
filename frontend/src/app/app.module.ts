@@ -14,6 +14,7 @@ import { ApiGateway } from 'src/api-gateway';
 import { AlbumPorvider } from 'src/providers/album.provider';
 import { HttpClientModule } from '@angular/common/http';
 import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatListModule} from '@angular/material/list';
 
 const routes: Routes = [
   {
@@ -39,6 +40,7 @@ const routes: Routes = [
     ReactiveFormsModule,
     MatToolbarModule,
     MatButtonModule,
+    MatListModule,
     RouterModule.forRoot(routes)
 
 
