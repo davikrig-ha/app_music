@@ -11,6 +11,7 @@ import { AlbumPorvider } from 'src/providers/album.provider';
 export class DashboardComponent implements OnInit {
 
   name = '';
+  author = '';
 
   constructor(
     private router: Router,
@@ -22,8 +23,12 @@ export class DashboardComponent implements OnInit {
         // this.getAlbum();
       }
       
-  search(){
+  searchName(){
     this.findAlbumByName(`name=${this.name}`);
+  }
+
+  searchAuthor(){
+    this.findAuthorByName(`author=${this.author}`);
   }
 
    async getAlbum() {
@@ -40,6 +45,16 @@ export class DashboardComponent implements OnInit {
     
     try {
       const album = await this.albumPorvider.findAlbum(query);
+      console.log(album)
+    } catch (error) {
+      console.error(error)
+    }
+  } 
+
+  async findAuthorByName(query?: string) {
+    
+    try {
+      const album = await this.albumPorvider.findAuthor(query);
       console.log(album)
     } catch (error) {
       console.error(error)

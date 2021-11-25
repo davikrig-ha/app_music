@@ -40,6 +40,12 @@ export class AlbumService {
   }
 
 
+  findByAuthor(queryAuthor): Promise<Album[]> {
+    return this.albumRepository.find({
+      where :{author: Like(`${queryAuthor}%`)}
+    });
+  }
+
   findAll(): Promise<Album[]> {
     return this.albumRepository.find();
   }

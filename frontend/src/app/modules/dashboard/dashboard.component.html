@@ -22,7 +22,20 @@
         </button>
         
       </mat-form-field>
-      <button class="search" mat-button (click)="search()">search</button>
+      <button class="search" mat-button (click)="searchName()">search</button>
+  </div>
+
+  <div class="example">
+    <mat-form-field appearance="outline">
+        <mat-label>Author Name</mat-label>
+        <input matInput type="text" [(ngModel)]="author">
+        <button *ngIf="author" matSuffix mat-icon-button (click)="author=''">
+          <mat-icon>close</mat-icon>
+        </button>
+        
+      </mat-form-field>
+      <button class="search" mat-button (click)="searchAuthor()">search</button>
+
   </div>
     
 </div>
