@@ -13,6 +13,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { ApiGateway } from 'src/api-gateway';
 import { AlbumPorvider } from 'src/providers/album.provider';
 import { HttpClientModule } from '@angular/common/http';
+import {MatToolbarModule} from '@angular/material/toolbar';
 
 const routes: Routes = [
   {
@@ -36,6 +37,7 @@ const routes: Routes = [
     MatIconModule,
     FormsModule,
     ReactiveFormsModule,
+    MatToolbarModule,
     MatButtonModule,
     RouterModule.forRoot(routes)
 

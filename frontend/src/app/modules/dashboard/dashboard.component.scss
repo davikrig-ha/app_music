@@ -1,0 +1,25 @@
+#dashboard {
+    .search{ 
+        background-color: #cf832c;
+        width: 100%;
+        max-width: 100px;
+        height: 50px;
+    }
+
+    .search:hover {
+        background-color: #f8a94f;
+    }
+
+    .example-spacer {
+        flex: 1 1 auto;
+      }
+
+      .example {
+          width: 100%;
+          max-width: 500px;
+          margin-left: 250px;
+          margin-top: 50px;
+          
+      }
+      
+}
