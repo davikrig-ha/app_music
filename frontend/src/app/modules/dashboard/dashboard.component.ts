@@ -49,15 +49,6 @@ export class DashboardComponent implements OnInit {
     }
   } 
 
-  async findAuthorByName(query?: string) {
-    
-    try {
-      const album = await this.albumPorvider.findAuthor(query);
-      console.log(album)
-    } catch (error) {
-      console.error(error)
-    }
-  } 
 
 
 

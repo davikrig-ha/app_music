@@ -18,10 +18,6 @@ export class AlbumController {
     return this.albumService.findByName(query);
   }
 
-  @Get('findAuthor')
-  findListByAuthor(@Query() query: any) {
-    return this.albumService.findByAuthor(query.author);
-  }
 
   @Get(':id')
   findOne(@Param('id') id: string) {
