@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AlbumPorvider } from 'src/providers/album.provider';
-import { AlbumServiceService } from '../../services/album-service.service';
+
 
 @Component({
   selector: 'app-dashboard',

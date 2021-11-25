@@ -1,22 +1,18 @@
-import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { ApiGateway } from 'src/api-gateway';
-import { AlbumPorvider } from 'src/providers/album.provider';
-import { FlexLayoutModule } from "@angular/flex-layout";
-import { MatIconModule } from '@angular/material/icon';
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { DashboardComponent } from './modules/dashboard/dashboard.component';
-import {MatToolbarModule} from '@angular/material/toolbar';
-import { MatButtonModule } from '@angular/material/button';
-import {MatInputModule} from '@angular/material/input'
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { CommonModule } from '@angular/common';
+import {MatInputModule} from '@angular/material/input';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatIconModule} from '@angular/material/icon';
+import { MatButtonModule } from '@angular/material/button';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule, Routes } from '@angular/router';
-
-
+import { ApiGateway } from 'src/api-gateway';
+import { AlbumPorvider } from 'src/providers/album.provider';
+import { HttpClientModule } from '@angular/common/http';
 
 const routes: Routes = [
   {
@@ -27,26 +23,23 @@ const routes: Routes = [
   { path: 'dashboard', component: DashboardComponent },
    ]
 @NgModule({
-  
   declarations: [
-    AppComponent, 
+    AppComponent,
     DashboardComponent
   ],
   imports: [
     BrowserModule,
-    BrowserAnimationsModule,
     AppRoutingModule,
-    HttpClientModule,
-    MatIconModule,
-    FlexLayoutModule,
-    MatToolbarModule,
-    MatButtonModule,
     MatInputModule,
-    ReactiveFormsModule,
+    HttpClientModule,
+    BrowserAnimationsModule,
+    MatIconModule,
     FormsModule,
-    RouterModule.forRoot(routes),
-    
-    
+    ReactiveFormsModule,
+    MatButtonModule,
+    RouterModule.forRoot(routes)
+
+
   ],
   providers: [ApiGateway, AlbumPorvider],
   bootstrap: [AppComponent]
