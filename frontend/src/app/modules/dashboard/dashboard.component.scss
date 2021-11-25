@@ -1,6 +1,6 @@
 #dashboard {
     .search{ 
-        color: #fff;
+        color: #000;
        background-color: #cf832c;
         width: 100%;
         max-width: 100px;
@@ -22,9 +22,12 @@
 
       .example {
           width: 100%;
-          max-width: 500px;
-          margin-left: 250px;
+          max-width: 600px;
+          margin-left: 100px;
           margin-top: 50px;
+          background: #fff;
+          border-radius: 4px;
+          padding: 10px;
           
       }
 
@@ -33,18 +36,18 @@
       }
 
       mat-label {
-          color: #fff;
+          color: #000;
          
       }
 
       ::ng-deep .mat-form-field-appearance-outline .mat-form-field-outline {
-          color: #fff;
+          color: #000;
           margin-top: 3px;
           margin-bottom: -3px;
       }
 
       .cdk-text-field-autofill-monitored:not(:-webkit-autofill) {
-          color: #fff;
+          color: #000;
       }
 
       .close {

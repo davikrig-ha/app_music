@@ -26,7 +26,7 @@ export class DashboardComponent implements OnInit {
   search(){
     const params = `name=${this.name}&author=${this.author}`
     this.searchAlbum(params);
-    // this.findAuthorByName(`author=${this.author}`);
+   
   }
 
    async getAlbum() {
