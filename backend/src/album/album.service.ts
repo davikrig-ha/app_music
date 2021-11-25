@@ -9,14 +9,14 @@ import { Album } from './entities/album.entity';
 
 @Injectable()
 export class AlbumService {
- 
+
   constructor(
     @InjectRepository(Album)
     private albumRepository: Repository<Album>,
-  ) {}
+  ) { }
 
 
- 
+
   create(createAlbumDto: CreateAlbumDto): Promise<Album> {
     const album = this.albumRepository.create(createAlbumDto);
     return this.albumRepository.save(album);
@@ -33,16 +33,19 @@ export class AlbumService {
     return this.albumRepository.save(album);
   }
 
-  findByName(queryName): Promise<Album[]> {
+  findByName(query): Promise<Album[]> {
     return this.albumRepository.find({
-      where :{name: Like(`${queryName}%`)}
+      where: {
+        name: Like(`${query.name}%`),
+        author: Like(`${query.author}%`)
+      }
     });
   }
 
 
   findByAuthor(queryAuthor): Promise<Album[]> {
     return this.albumRepository.find({
-      where :{author: Like(`${queryAuthor}%`)}
+      where: { author: Like(`${queryAuthor}%`) }
     });
   }
 
@@ -55,10 +58,10 @@ export class AlbumService {
   }
 
   async remove(id: string) {
-   const album = await this.findOne(id);
-   return this.albumRepository.remove(album);
+    const album = await this.findOne(id);
+    return this.albumRepository.remove(album);
   }
 
-  
+
 
 }

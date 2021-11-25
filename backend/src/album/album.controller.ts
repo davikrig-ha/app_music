@@ -15,7 +15,7 @@ export class AlbumController {
   @Get('find')
   findListByName(@Query() query: any) {
     console.log("🚀 ~ file: album.controller.ts ~ line 17 ~ AlbumController ~ findListByName ~ query", query)
-    return this.albumService.findByName(query.name);
+    return this.albumService.findByName(query);
   }
 
   @Get('findAuthor')

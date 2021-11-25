@@ -23,12 +23,10 @@ export class DashboardComponent implements OnInit {
         // this.getAlbum();
       }
       
-  searchName(){
-    this.findAlbumByName(`name=${this.name}`);
-  }
-
-  searchAuthor(){
-    this.findAuthorByName(`author=${this.author}`);
+  search(){
+    const params = `name=${this.name}&author=${this.author}`
+    this.searchAlbum(params);
+    // this.findAuthorByName(`author=${this.author}`);
   }
 
    async getAlbum() {
@@ -41,7 +39,7 @@ export class DashboardComponent implements OnInit {
     }
   } 
 
-  async findAlbumByName(query?: string) {
+  async searchAlbum(query?: string) {
     
     try {
       const album = await this.albumPorvider.findAlbum(query);
