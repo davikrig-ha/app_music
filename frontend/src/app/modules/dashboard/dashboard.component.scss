@@ -5,6 +5,7 @@
         width: 100%;
         max-width: 100px;
         height: 50px;
+        border: 2px solid #000;
         
     }
 
@@ -22,17 +23,19 @@
 
       .example {
           width: 100%;
-          max-width: 600px;
-          margin-left: 100px;
-          margin-top: 50px;
+          max-width: 500px;
+          margin: auto;
           background: #fff;
           border-radius: 4px;
           padding: 10px;
-          
+          display: block;
+          border: 2px solid #cf832c;
+
       }
 
       .toolbar {
           color: #cf832c;
+          margin-bottom: 50px;
       }
 
       mat-label {
@@ -53,6 +56,16 @@
       .close {
           color: #000;
       }
+
+      mat-form-field {
+          display: block;
+      }
+
+    h1{ 
+        text-transform: uppercase;
+        margin-bottom: 12px;
+    }
+
 
    
 }
