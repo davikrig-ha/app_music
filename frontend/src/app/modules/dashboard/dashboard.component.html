@@ -41,17 +41,13 @@
 
     <mat-list *ngFor="let album of albuns">
       <mat-list-item >
-
         <div>
          <h1>{{ album.name }}</h1> 
         </div>
 
-        <div  *ngFor="let music of album.music">
-           <span>{{ music.name }}</span>
-           
+        <div>
+          <h2 class="author">- {{ album.author }}</h2>
         </div>
-  
-
       </mat-list-item>
     </mat-list>
   </div>
