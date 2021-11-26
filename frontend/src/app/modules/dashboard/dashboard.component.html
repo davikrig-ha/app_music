@@ -1,53 +1,57 @@
 <div id="dashboard">
-
   <div>
-      <mat-toolbar class="toolbar">
-        <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
-          <mat-icon>menu</mat-icon>
-        </button>
-        <span>My Albuns</span>
-        <span class="example-spacer"></span>
-        <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
-          <mat-icon>queue_music</mat-icon>
-        </button>
-      </mat-toolbar>
-    </div>  
- 
-  <div class="example">
-    <mat-form-field appearance="outline">
-        <mat-label>Album Name</mat-label>
-        <input matInput type="text" [(ngModel)]="name">
-        <button *ngIf="name" matSuffix mat-icon-button (click)="name=''">
-          <mat-icon class="close">close</mat-icon>
-        </button>
-        
-      </mat-form-field>
-     
-
-    <mat-form-field appearance="outline">
-        <mat-label>Author Name</mat-label>
-        <input matInput type="text" [(ngModel)]="author">
-        <button *ngIf="author" matSuffix mat-icon-button (click)="author=''">
-          <mat-icon class="close">close</mat-icon>
-        </button>
-        
-      </mat-form-field>
-      
-      <button class="search" mat-button (click)="search()">search</button>
-
-    
-        <mat-list>
-       
-          <mat-list-item *ngFor="let album of albuns">
-            
-            {{album}} 
-            
-          </mat-list-item>
-        </mat-list>
-
+    <mat-toolbar class="toolbar">
+      <button
+        mat-icon-button
+        class="example-icon"
+        aria-label="Example icon-button with menu icon"
+      >
+        <mat-icon>menu</mat-icon>
+      </button>
+      <span>My Albuns</span>
+      <span class="example-spacer"></span>
+      <button
+        mat-icon-button
+        class="example-icon favorite-icon"
+        aria-label="Example icon-button with heart icon"
+      >
+        <mat-icon>queue_music</mat-icon>
+      </button>
+    </mat-toolbar>
   </div>
 
+  <div class="example">
+    <mat-form-field appearance="outline">
+      <mat-label>Album Name</mat-label>
+      <input matInput type="text" [(ngModel)]="name" />
+      <button *ngIf="name" matSuffix mat-icon-button (click)="name = ''">
+        <mat-icon class="close">close</mat-icon>
+      </button>
+    </mat-form-field>
 
+    <mat-form-field appearance="outline">
+      <mat-label>Author Name</mat-label>
+      <input matInput type="text" [(ngModel)]="author" />
+      <button *ngIf="author" matSuffix mat-icon-button (click)="author = ''">
+        <mat-icon class="close">close</mat-icon>
+      </button>
+    </mat-form-field>
+
+    <button class="search" mat-button (click)="search()">search</button>
+
+    <mat-list *ngFor="let album of albuns">
+      <mat-list-item >
+
+        <div>
+         <h1>{{ album.name }}</h1> 
+        </div>
+
+        <div  *ngFor="let music of album.music">
+           {{ music.name }}
+        </div>
   
-    
+
+      </mat-list-item>
+    </mat-list>
+  </div>
 </div>

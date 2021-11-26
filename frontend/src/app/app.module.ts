@@ -15,6 +15,7 @@ import { AlbumPorvider } from 'src/providers/album.provider';
 import { HttpClientModule } from '@angular/common/http';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatListModule} from '@angular/material/list';
+import { MusicComponent } from './modules/music/music.component';
 
 const routes: Routes = [
   {
@@ -27,7 +28,8 @@ const routes: Routes = [
 @NgModule({
   declarations: [
     AppComponent,
-    DashboardComponent
+    DashboardComponent,
+    MusicComponent
   ],
   imports: [
     BrowserModule,

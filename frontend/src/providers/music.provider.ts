@@ -34,6 +34,16 @@ export class MusicPorvider {
         });
     }
 
+
+    findMusic(query: any): Promise<any> {
+        return new Promise((resolve, reject) => {
+            this.apiGateway.get( `music/find?${query}`).subscribe((response: HttpResponse<any>) => {
+                resolve(response.body);
+                // this.snackBar.successMessage(response.body.message);
+            }, reject);
+        });
+    }
+
     validateRegister(musicDetail: any): Promise<any> {
         return new Promise((resolve, reject) => {
             this.apiGateway.post('music', musicDetail).subscribe((response: HttpResponse<any>) => {

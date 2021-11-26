@@ -1,6 +1,6 @@
 import { Injectable, NotFoundException } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
-import { Repository } from 'typeorm';
+import { Like, Repository } from 'typeorm';
 import { CreateMusicDto } from './dto/create-music.dto';
 import { UpdateMusicDto } from './dto/update-music.dto';
 import { Music } from './entities/music.entity';
@@ -28,6 +28,14 @@ export class MusicService {
       throw new NotFoundException(`album ${id} not found`);
     }
     return this.musicRepository.save(music);
+  }
+
+  findByName(query): Promise<Music[]> {
+    return this.musicRepository.find({
+      where: {
+        name: Like(`${query.name}%`)
+      }
+    });
   }
 
 
